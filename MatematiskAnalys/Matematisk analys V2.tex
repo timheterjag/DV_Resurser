@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\fontsize{12}{15}
+
+
+\title{Matematisk Analys  V.2}
+\author{Rasmus Thorén}
+
+\begin{document}
+	\maketitle
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{/home/rasmus/Bilder/Wallpapers/einsten.jpg}
+		\label{fig:image}
+	\end{figure}
+	
+	\section{Derivatan}
+	\textit{Defenition:}
+	$\frac{d}{dx}f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
+	\\\\
+	\textbf{Deriveringsregler} \\
+	
+	Potensregeln: $\frac{d}{dx}(x^n)=nx^{n-1}$
+	
+	Summaregeln: $\frac{d}{dx}(f(x)\pm g(x))=\frac{d}{dx}(f(x))\pm \frac{d}{dx}(g(x))$
+	
+	Produktregeln: $\frac{d}{dx}(f(x)g(x))=f(x)\frac{d}{dx}(g(x))+g(x)\frac{d}{dx}(f(x))$
+	
+	Kvoteregeln: $\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)=\frac{g(x)\frac{d}{dx}(f(x))-f(x)\frac{d}{dx}(g(x))}{[g(x)]^2}$
+	
+	Kjedjeregeln: $\frac{d}{dx}(f(g(x)))=f'(g(x))g'(x)$
+	\\\\
+	\textbf{Sats}\\
+	Om $f\to R$ är deriverbar i x, då är f kontinuerlig i x. Om f är deriverbar i $I CD_f$, då är f kontinuerlig på I
+	\\\\
+	\textit{Bevis} 
+	Vi vill visa att
+	 $\lim\limits_{y\to x} f(y)=f(x)y=\lim\limits_{h\to 0}f(x+h)-f(x)=0$ Då f är deriverbar
+	 i x. 
+	\\\\\\\\
+	\textbf{Högre Derivator}\\
+	Om f'(x) själv är deriverbar i $C\in D_f,CD_f$ då kallas derivatan av f'(x) för andra derivatan av f i x, skrivs f''(x). Den n:te derivatan av f skrivs som $f^n$.
+	\\\\
+	\section{Tolkning Av Derivatan}
+	\textbf{1. Lutning till tangent till funktionsgraf}\\ Se ovan
+	\\\\
+	\textbf{2. Förändringshastighet}
+	\\
+	\textit{Exempel} f(t) anger hur långt en bil färdats efter tid t. Då anger f'(t) hastigheten vid t. Medlehastigheten för bilen under [$t_1,t_2$] ges av $\frac{f(t_2) - f(t_1)}{t_2 - t_1} $
+	\\ \\
+	\textbf{3. Känslighet under föränding}
+	\\ \\
+	\textbf{4. Linjär approximation}\\
+	Kontinuitet av f i $x_0 -> |f(x)-f(x_0)|$ är likt om x är nära $x_0$\\
+	Linjär approximationen av f i $x_0 \in D_f'$ ges av $L(x)=f'(x_0)(x-x_0)+f(x_0)$. Detta är den bästa linjära approximationen vilket bevisas enligt nedan. \\
+	\[ \lim_{x\to\ 0} \frac{f(x_0+h)-(f(x_0)}{h} = f'(x_0)\]\
+	\[ \lim_{x\to\ 0} \frac{f(x_0+h)-(f(x_0)-(hf'(x_0)}{h} = 0\]
+	\[ \lim_{x\to\ 0} \frac{f(x)-(f(x_0)+f'(x_0)+f'(x_0)(x-x_0)}{x-x_0} = 0\] 
+	\\
+	\textit{Exempel} 
+	\\ 
+	Använd linäriseringen av $g(x)=\sqrt{x}$ kring x=25 för att approximera $\sqrt{26}$. 
+	\\
+	Vi vet att $g'(x)=\frac{1}{2\sqrt{x}}$ vilket ger oss $g'(25)=\frac{1}{10}, g(25)=5$.\\ $L(x)=\frac{1}{10}(x-25)+5$. Det approximativa för $g(26)=\sqrt{26}=5.0990195....$ blir $L(26)=\frac{1}{10}+5=5.1$
+	\\
+	\textbf{Lokala och globala maximum och minimum}\\
+	\textbf{DEF:} En funktion f har ett \textbf{globalt maximum} i $x_0\in D_f$ om $f(x)<=f(x_0)$ för alla $x_0\in D_f$. Om $f(x)>=f(x_0)$ för alla $x\in D_F$ sägs f ha ett \textbf{globalt minimum} i x. \\\\
+	\textbf{Def} \\
+	f sägs ha ett \textbf{lokalt maximum} i $x\in D_f$ om det finns en omgivning I till $x_0$ så att $f(x)=<f(x_0)$ för alla $x\in I$.
+	\textbf{Lokalt minimum} om istället $f(x)>=f(x_0)$ för $x\in I$
+	\\\\
+	En funktion som har ett loolaklt max/min i $x_0$ sägs ha en lokal \textbf{extrempunkt} i $x_0$. Värdet kalls då lokalt \textbf{extremvärde}. 
+	\textbf{Sats} \\
+	Låt $f:D_f -> R$ vara deriverbar i $x_0$ och ha en lokal \textbf{extrempunkt} i $x_0$. Då är $f'(x-0)=0$\\
+	\textit{Vi kallar $x\in$ $D_f$ där $f'(x_0)=0$ för stationära (eller kritiska) punkter}
+	\\\\
+	\textbf{Sats} Låt $f:D_f -> R$ vara deriverbar i $x_0$ och ha en lokal extrempunkt i $x_0$. Då är $f'(x_0)=0$ \\
+	\textit{Obs 1}\\ 
+	Det omvända av satsen gäller inte. Om $x_0$ är en stationärpunkt för f så behöver $x_0$ inte vara en lokal extrempunkt t.ex. $x -> x³$ 
+	\\
+	\textit{Obs 2: } 
+	Satsen säger inget om lokala extrempunkter där f ej är deriverbar. 
+	\\\\
+	\textit{Bevis}, Vi visar när $x_0$ är lokalt max.
+	\\
+	Då $x_0\in D_f\to f'(x_0)=\lim\limits_{x\to 0}\frac{f(x_0 + h )-f(x_0)}{h}$ 
+	\\
+	Då f har ett lokalt max i $x_0$. Så gäller det att $\frac{f(x_0 +h) - f(x_0)}{h} = 0$ om $h > 0$. 
+	\\
+	$\frac{f(x_0 +h)-f(x_0}{h}$ om $h < 0$.
+	\\
+	Vilket ger oss $f'(x_0)=0$. \\
+	\textit{v.v.s}
+	\\\\\\
+	\textbf{Medelvärdessatsen}
+	\\\\
+	\textbf{Sats} (Derivatans medelsvärdesats) \\
+	Låt $f:[a,b]\to R$ vara kontinuerlig och deriverbar på (a,b). Då exister det $p\in (a,b)$ sådan att $f'(p)(b-a)=f(b)-f(a)$.
+	\\\\
+	\textbf{Sats} (Rolles sats) \\
+	Om f är som ovan och $f(a) = f(b)$. Då extisterar det $p\in (a,b)$ så att $f'(p) = 0$.
+	\\\\
+	\textbf{Sats} (Generaliserade Medelvärdessatsen)
+	\\
+	Om $f,g$ är kant på $[a,b]$ och deriverbara på (a,b). Då finns det $p\in (a,b)$ så att $ f'(p)(g(b)-g(a)) = g'(p)(f(b)-f(a))$
+	\\\\\\
+	\textbf{Primitiva funktioner} \\
+	Låt $(a,b)\to R$ va ren funktion $F:[a,b]\to R$ sägs vara en primitiv funktion till f på (a,b) om F'=f.
+	\\\\
+	\section{Imlicita derivator} 
+	Studera kurvor i planet $(x,y)\in R²$ som ges av ekvationen på formen $F(x,y)=0$
+	Mål givet $(x_0,y_0)$ som uppfuller ekvationen $ f(x_o,y_0)=0 $ 
+	\\
+	1) Vi kan hitta en omgivning I till $x_0$ så atgt det finns en funktion $y:I\to R$ sådan att $y(x_0)=y_0$ och för alla $x\in I, F(x,y(x))=0$.\\
+	Om detta är faller hittta tangentlinjen till L 
+	\\\\
+	Det finns en Sats som säger att om $y\to F(x_o,y)$ är deriverbar i $y_0$ och $g'(y_0)\neq 0$ så finn funktionen vi sökte i I.
+	\\
+	Om  vi vet att $y:I\to R$ som i I exister. $F(x,y(x))=0$
+	\\
+	Om vi kan lösa ut $y'(x)$ kan nvi hitta tangentlinjen till kurvan genom $(x_o,y_0)$
+	\\\\
+	\textit{Exempel:}
+	\\
+	Hitta tangentlinje till kurvan genom $(0,0)$ som uppfyller \\ $F(x,y)=sin(x+y)-cos(xy)+1=0$
+	\\\\
+	1) Kontollera att $F(0,0)=0$ \\
+	2) $g:y\to F(0,y)=sin(y)$,$g'(0)=cos(0)=1\neq0$ \\
+	3)Nu vet vi att $y:I\to R$ deriverbar sådan att $f(x,(x))=0$
+	\\\\
+	$sin(x+y(x))-cos(xy(x))+1=0$
+	\\\\
+	\textit{Derivera}
+	\\
+	$cos(x+y(x))(1+y'(x))+sin(xy(x))(y(x)+xy'(x))=0$ \\
+	sätt $x_0=0,y=0$
+	Vilket ger oss \\
+	$1(1+y'(0))+0=0 \implies y'(0)=-1$ \\
+	Så tangentlinjen är $y=-x$
+	\\\\
+	\textbf{Sats(Derivata av invers)}\\
+	Låt $f.D_f\to V_f$ vara deriverbar och inverterbar.
+	Då är $f^-1:V_f\to D_f$ deriverbar i alal punkter $y\in V_f$ sådan att om  $y=F(x)$ så är $f'(x)\neq0$. Och $(f^-1)'(y)=\frac{1}{f'(f^-1(y))}$
+	\\\\
+	\textit{Bevis}\\
+	Från defentionen av invers så $x=f^1-1 (y)$ om och endast om $y=f(x)$ \\
+	Vi vill skriva x som en funktion av y. Det vi vet är att $(x,y)\in R^2$\\ $F(x,y)=f(x)-y=0$
+	Om $(x_0,y_0)$ på kurvan\\ $g:x\to F(x_0,y_0)$ \\ $g'(x)=f'(x)$ så om $f'(x_0)\neq0$ finns det en deriverbar funktion $f^-1 (y)$ så att $F(f^-1 (y),y)=0 $ i en omgivning av $y=y_0$
+	
+	\section{L'Hopitals regler}
+	\textbf{Sats(L'Hopitals första regel)} \\
+	Låt f,g vara deriverbara funktioner definerade i en punkterad omgivning I till $a\in R $ och $g'(x)\neq0$ för alla $x\in I$.
+	\\\\
+	$\lim\limits_{x\to a} f(x)=\lim\limits_{x\to a} g(x) = 0$ och gränsvärdet $\lim\limits_{x\to a}\frac{f'(x)}{g'(x)}, existerar$ \\\\
+	Då gäller det att \\
+	$\lim\limits_{x\to a}\frac{f(x)}{g(x)}=\lim\limits_{x\to a}\frac{f'(x)}{g'(x)}$
+	
+	\textit{OBS.} Tillåttet att $\frac{f'}{g'}$ har oegntlig gränsvärde \\\\
+	\textbf{Sats(L'Hospitals andra regel)} \\\\
+	Låt f,g vara deriverbara funktioner i en punkterad omgivning till $a\in R$. Sådan att 
+	
+	 	1) $g'(x)\neq0$ på I \\ 
+	 
+		2) $\lim\limits_{x\to a} |g(x|=\infty$ \\
+	
+		3) och $\lim\limits_{x\to a}\frac{f'(x)}{g(x)}, existerar$
+	\\\\
+	\textbf{Bevis av regel 1}\\
+	Vi vill bevisa L'Hôpitals första regel, som säger att om
+	$$\lim_{x \to a} f(x) = 0 \quad \text{och} \quad \lim_{x \to a} g(x) = 0,$$
+	så är
+	$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.$$ 
+	
+	För att bevisa detta, definiera vi $h(x) = \frac{f(x)}{g(x)}$. Vi vill visa att $\lim_{x \to a} h(x) = \lim_{x \to a} \frac{f'(x)}{g'(x)}$. Eftersom $f$ och $g$ är differentierbara i $a$ med $g'(a) \neq 0$, så kan vi använda kvotregeln för att få:
+	$$h'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2} = \frac{f'(x)}{g'(x)} - \frac{f(x)g''(x)}{(g'(x))^2}.$$
+	
+	Notera att den andra termen i uttrycket ovan innehåller $f(x)$ och $g(x)$, vilket betyder att den går mot $0$ när $x$ går mot $a$ eftersom både $f(x)$ och $g(x)$ går mot $0$. Därför har vi
+	$$\lim_{x \to a} h'(x) = \lim_{x \to a} \frac{f'(x)}{g'(x)},$$
+	vilket betyder att
+	$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} h(x) = \lim_{x \to a} \frac{f'(x)}{g'(x)}$$,  Vilket var det vi ville visa 
+\end{document}
